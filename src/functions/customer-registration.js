@@ -17,7 +17,7 @@ app.http('customer-registration', {
     methods: ['GET', 'POST'],
     authLevel: 'anonymous',
     handler: async (request, context) => {
-        console.log('zzzzzzzzzzzzzzzzz', request)
+        
         const { 
             firstname,
             lastname,
@@ -30,7 +30,7 @@ app.http('customer-registration', {
             state,
             zip 
         } = request.params;
-        console.log('zzzzzzzzzzzzzzzzz here')
+        
         if (!phone) {
             return { status: 400, body: JSON.stringify({ message: 'Phone number is required' })};
         }
@@ -40,7 +40,7 @@ app.http('customer-registration', {
         if (!lastname) {
             return { status: 400, body: JSON.stringify({ message: 'Last name is required' })};
         }
-        console.log('zzzzzzzzzzzzzzzzz here')
+        
 
 
             let connection;
